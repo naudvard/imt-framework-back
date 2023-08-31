@@ -44,4 +44,14 @@ public class Dish {
                 .allergens(dish.getAllergens())
                 .build();
     }
+    public static Dish fromData(DishModel dish){
+        return Dish.builder()
+                .id(dish.getId())
+                .image(dish.getImage())
+                .title(dish.getTitle())
+                .description(dish.getDescription())
+                .price(dish.getPrice())
+                .category(dish.getCategory())
+                .build();
+    }
 }
