@@ -1,6 +1,5 @@
 package imt.framework.back.imtframeworkback.presentation.rest.orders;
 
-import imt.framework.back.imtframeworkback.domain.models.Order;
 import imt.framework.back.imtframeworkback.domain.requests.OrderLineReq;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
