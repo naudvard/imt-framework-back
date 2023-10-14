@@ -14,6 +14,9 @@ public interface DishResources {
     @GetMapping
     List<Dish> getDishes();
 
+    @GetMapping("/search")
+    List<Dish> searchDishes(@RequestParam String query);
+
     @PostMapping
     Dish createDish(@RequestParam String image, @RequestParam String title, @RequestParam String description, @RequestParam Double price, @RequestParam String category, @RequestParam List<String> allergens);
 }

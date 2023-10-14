@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.search.mapper.pojo.mapping.definition.annotation.FullTextField;
+import org.springframework.stereotype.Indexed;
 
 import java.util.List;
 
@@ -14,13 +16,16 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
+@Indexed
 public class DishModel {
     @Id
     @GeneratedValue
     @Column(name = "dish_id")
     Integer dishId;
     String image;
+    @FullTextField
     String title;
+    @FullTextField
     String description;
     Double price;
     String category;

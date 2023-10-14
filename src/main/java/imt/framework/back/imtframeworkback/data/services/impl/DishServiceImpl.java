@@ -26,6 +26,11 @@ public class DishServiceImpl implements DishService {
     }
 
     @Override
+    public List<Dish> findInTitleOrDescription(String query) {
+        return dishRepository.search(query, 20, 0).stream().map(Dish::fromData).toList();
+    }
+
+    @Override
     public Optional<Dish> findById(Integer id) {
         return dishRepository.findById(id).map(Dish::fromData);
     }

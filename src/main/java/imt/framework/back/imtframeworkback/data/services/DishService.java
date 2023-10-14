@@ -9,6 +9,7 @@ public interface DishService {
     Dish save(Dish dish);
 
     List<Dish> findAll();
+    List<Dish> findInTitleOrDescription(String query);
 
     Optional<Dish> findById(Integer id);
 }

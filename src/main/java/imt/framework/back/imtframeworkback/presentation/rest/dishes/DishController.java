@@ -4,6 +4,7 @@ import imt.framework.back.imtframeworkback.domain.models.Dish;
 import imt.framework.back.imtframeworkback.domain.requests.DishReq;
 import imt.framework.back.imtframeworkback.domain.usecases.dishes.AddDishUseCase;
 import imt.framework.back.imtframeworkback.domain.usecases.dishes.GetDishesUseCase;
+import imt.framework.back.imtframeworkback.domain.usecases.dishes.SearchDishesUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,10 +15,16 @@ import java.util.List;
 public class DishController implements DishResources {
     private final AddDishUseCase addDishUseCase;
     private final GetDishesUseCase getDishesUseCase;
+    private final SearchDishesUseCase searchDishesUseCase;
 
     @Override
     public List<Dish> getDishes() {
         return getDishesUseCase.command(null);
+    }
+
+    @Override
+    public List<Dish> searchDishes(String query) {
+        return searchDishesUseCase.command(query);
     }
 
     @Override
